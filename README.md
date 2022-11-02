@@ -4,9 +4,10 @@
 2 - Active Virtual Environment => .\venv\Scripts\activate<br>
 3 - Install Django in project => pip install django<br>
 4 - Create a config file => django-admin startproject config .<br>
-5 - Create requirements.txt => pip freeze > requirements.txt<br>
-6 - Now test your project => python manage.py runserver<br>
-7 - Create Docker File => new > Dockerfile<br>
+5 - Migrate project => python manage.py migrate<br>
+6 - Create requirements.txt => pip freeze > requirements.txt<br>
+7 - Now test your project => python manage.py runserver<br>
+8 - Create Docker File => new > Dockerfile<br>
 
     FROM python:3.10.6
 
@@ -19,11 +20,11 @@
     RUN pip install -r requirements.txt
     
     COPY . /code/
-8 - Create .docker ignore file => new > .dockerignore<br>
+9 - Create .docker ignore file => new > .dockerignore<br>
 
     venv
-9 - run command "docker build ." in terminal <br>
-10 - Create docker-compose file => new > docker-compose.yml 
+10 - run command "docker build ." in terminal <br>
+11 - Create docker-compose file => new > docker-compose.yml 
     
     version: '2.12.0'
     
@@ -36,4 +37,4 @@
         ports:
           - 8000:8000
 
-11 - run command "docker-compose up" in terminal <br>
+12 - run command "docker-compose up" in terminal <br>
