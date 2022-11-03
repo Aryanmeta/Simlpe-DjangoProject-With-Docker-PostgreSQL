@@ -54,16 +54,16 @@
 - config > settings.py > DATABASES :
     
 
-    DATABASES = {
-        'default': { 
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'db',
-            'PORT': 5432,
+        DATABASES = {
+            'default': { 
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'postgres',
+                'USER': 'postgres',
+                'PASSWORD': 'postgres',
+                'HOST': 'db',
+                'PORT': 5432,
+            }
         }
-    }
 16 - Install psycopg2 Package : 
 - docker-compose exec web pip install psycopg2-binary
 <br>
@@ -90,8 +90,9 @@
 - docker-compose exec web python manage.py migrate</b>
 
 <br>
-
 <br>
+
+
 21 - Create superuser : 
 - docker-compose exec web python manage.py createsuperuser
 
