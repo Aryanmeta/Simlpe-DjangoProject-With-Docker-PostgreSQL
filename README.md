@@ -38,3 +38,64 @@
           - 8000:8000
 
 12 - run command "docker-compose up" in terminal <br>
+13 - Container for postgres = > go to docker-compose.yml : 
+
+    db:
+        image: postgres:15
+        environment:
+            - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+14 - Run :
+- docker-compose up
+
+
+
+15 - Connect to Postgres :
+- config > settings.py > DATABASES :
+    
+
+    DATABASES = {
+        'default': { 
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'db',
+            'PORT': 5432,
+        }
+    }
+16 - Install psycopg2 Package : 
+- docker-compose exec web pip install psycopg2-binary
+<br>
+<br>
+
+17 - Stop docker-compose : 
+- ctrl + c
+
+<br>
+
+18 - add psycopg2 to requirements.txt :
+- pip install psycopg2
+- pip freeze > requirements.txt 
+
+<br>
+
+19 - Run : 
+- docker-compose up --build 
+
+<br>
+
+20 - Migrate project :
+<h4><b>Send to Postgresql</h4>
+- docker-compose exec web python manage.py migrate</b>
+
+<br>
+
+21 - Create superuser : 
+- docker-compose exec web python manage.py createsuperuser
+
+<br>
+
+Now the project is connected to Postgresql 😍💗
+- 
+
